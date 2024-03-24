@@ -6,7 +6,7 @@ build:
     web: dockerfile
 release:
   image: web
-  # command:
-  #   - python manage.py migrate
+  command:
+    - python manage.py collectstatic --noinput
 run:
   web: gunicorn djangofullstack.wsgi
