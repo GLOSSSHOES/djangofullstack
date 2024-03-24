@@ -1,7 +1,7 @@
 const imageContainer = document.querySelector('.image-container');
-const images = imageContainer.querySelectorAll('img');
+const imageWrapper = imageContainer.querySelectorAll('.image-wrapper');
 
-images.forEach(img => {
+imageWrapper.forEach(img => {
     const clone = img.cloneNode(true); // Clone the image
     imageContainer.appendChild(clone); // Append the clone after the original image
 });
