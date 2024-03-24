@@ -7,9 +7,9 @@
 <h1 id="title">Nuestros modelos</h1>
 
 <div class="image-carousel">
-    <div class="image-container">
+    <div class="images-container">
         {% for shoe in shoes %}
-        <a href="{{ shoe.get_absolute_url() }}">
+        <a class="url-image-wrapper" id="{{ shoe.pk }}" href="{{ shoe.get_absolute_url() }}">
             <div class="image-wrapper">
                 <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
                 <div class="text-overlay name-overlay">{{shoe.name}}</div>
