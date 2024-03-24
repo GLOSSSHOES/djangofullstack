@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+
+{% block title %}Home{% endblock title%}
+
+{% block content %}
+
+<h1 id="title">Nuestros modelos</h1>
+
+<div class="image-carousel">
+    <div class="image-container">
+        {% for shoe in shoes %}
+        <a href="{{ shoe.get_absolute_url() }}">
+            <div class="image-wrapper">
+                <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+                <div class="text-overlay name-overlay">{{shoe.name}}</div>
+                <div class="text-overlay price-overlay">${{shoe.price}}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+
+{% if user.is_authenticated %}
+<p>Hello {{ user.email }} </p>
+<form method="post" action="{{ url('logout') }}">
+    {{ csrf_input }}
+    Click if you want to
+    <button type="submit">
+        Logged Out
+    </button>
+</form>
+{% endif %}

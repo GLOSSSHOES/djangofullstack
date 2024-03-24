@@ -1,0 +1,31 @@
+version: "3.9" # This changes almost all the settings
+
+services:
+  web:
+    build: .
+    # command: python /code/manage.py runserver 0.0.0.0:8000
+    command: gunicorn djangofullstack.wsgi -b 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SETTINGS_MODULE=djangofullstack.settings.dev"
+      - "DJANGO_SECRET_KEY=django-insecure-js4#8-jd(0j&nho!!k)un0=2oj(#=6948$zgmq6mo&@0@c-)e5"
+      - "DJANGO_DEBUG=True"
+      - "DJANGO_SECURE_SSL_REDIRECT=False"
+      - "SECURE_HSTS_SECONDS=0"
+      - "SECURE_HSTS_INCLUDE_SUBDOMAINS=False"
+      - "DJANGO_SECURE_HSTS_PRELOAD=False"
+      - "DJANGO_SESSION_COOKIE_SECURE=False"
+      - "DJANGO_CSRF_COOKIE_SECURE=False"
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+setup:
+  addons:
+  - plan: heroku-postgresql
+build:
+  docker:
+    web: dockerfile
+release:
+  image: web
+  # command:
+  #   - python manage.py migrate
+run:
+  web: gunicorn djangofullstack.wsgi

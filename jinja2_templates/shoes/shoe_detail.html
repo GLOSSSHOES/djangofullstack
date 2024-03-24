@@ -1,0 +1,13 @@
+<!-- templates/shoes/shoe_detail.html -->
+{% extends '_base.html' %}
+
+{% block title %}{{ shoe.name }}{% endblock title %}
+
+{% block content %}
+<div>
+    <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+    <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name}}</a></h2>
+    <p>Descripción: {{shoe.description}} </p>
+    <p>Price: {{shoe.price}}</p>
+</div>
+{% endblock content %}
