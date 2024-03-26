@@ -6,8 +6,9 @@
 {% block content %}
 <div>
     <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
-    <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name}}</a></h2>
+    <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name }}</a></h2>
     <p>Descripción: {{shoe.description}} </p>
     <p>Price: {{shoe.price}}</p>
+    <a href="{{ shoe.get_purchase_url() }}" class="btn btn-primary">Cómpralos</a>
 </div>
 {% endblock content %}
