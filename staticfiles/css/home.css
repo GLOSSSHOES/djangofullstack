@@ -4,9 +4,9 @@
     overflow-x: hidden;
 }
 
-.image-container {
+.images-container {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 11s linear infinite;
 }
 
 .image-wrapper {
@@ -39,7 +39,7 @@
 
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 
     100% {

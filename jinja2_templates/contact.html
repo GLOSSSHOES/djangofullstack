@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block title %}Contacto{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ static('css/contact.css') }}">
+{% endblock head %}
+
+{% block content %}
+
+<h1>Cómo contactarnos</h1>
+
+<p>No dude en comunicarse con nosotros al WhatsApp 32086397111.</p>
+
+<h3>Escríbenos!</h3>
+<form action="/contacto/" method="form_valid">
+    {{ csrf_input }}
+    {{ form.as_p() }}
+    <button type="button" class="btn btn-outline-success">Enviar correo</button>
+</form>
+
+{% endblock content %}

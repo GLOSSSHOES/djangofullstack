@@ -23,6 +23,16 @@ class ShoeDetailView(DetailView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        context["user"] = self.request.user
+        return context
+
+class ShoePurchase(DetailView):
+    model = Shoe
+    context_object_name = "shoe"
+    template_name = "shoes/shoe_purchase.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
         context["shoes"] = Shoe.objects.all()
         context["user"] = self.request.user
         return context

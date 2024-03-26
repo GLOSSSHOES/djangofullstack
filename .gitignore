@@ -2,6 +2,7 @@
 __pycache__/
 db.sqlite3
 docker-compose-prod.yml
+payu.conf.py
 *.sh
 *.sql
 shoes/migrations/

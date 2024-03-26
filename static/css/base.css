@@ -12,7 +12,15 @@ body {
 }
 
 h1 {
-    color: cadetblue;
+    color:burlywood;
+}
+
+h3 {
+    color:turquoise;
+}
+
+form {
+    color:turquoise;
 }
 
 img {

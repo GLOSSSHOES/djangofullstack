@@ -28,6 +28,9 @@ marshmallow==3.21.1
 numpy==1.26.4
 oauthlib==3.2.2
 packaging==24.0
+payu-python==0.1.5
+payu-sdk==1.2.0
+payu-websdk==0.1.7
 pillow==10.2.0
 psycopg2-binary==2.9.9
 pycparser==2.21
