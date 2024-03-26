@@ -2,21 +2,19 @@
 
 {% block title %}Contacto{% endblock title %}
 
-{% block head %}
+{% block style %}
     <link rel="stylesheet" href="{{ static('css/contact.css') }}">
-{% endblock head %}
+{% endblock style %}
 
 {% block content %}
-
-<h1>Cómo contactarnos</h1>
-
-<p>No dude en comunicarse con nosotros al WhatsApp 32086397111.</p>
-
-<h3>Escríbenos!</h3>
-<form action="/contacto/" method="form_valid">
-    {{ csrf_input }}
-    {{ form.as_p() }}
-    <button type="button" class="btn btn-outline-success">Enviar correo</button>
-</form>
-
+    <div class="div-body-contact">
+        <h1>Cómo contactarnos</h1>
+        <p>No dude en comunicarse con nosotros al <b>WhatsApp 32086397111.</b></p>
+        <h3>Escríbenos!</h3>
+        <form method="post">
+            {{ csrf_input }}
+            {{ form.as_p() }}
+            <button type="submit" class="btn btn-light" style="color: coral;">Enviar correo</button>
+        </form>
+    </div>
 {% endblock content %}
