@@ -1,0 +1,16 @@
+h1 {
+    font: bold italic Verdana;
+}
+
+form.p {
+    padding: 50%;
+}
+
+button {
+    color: coral;
+}
+
+.div-body-contact {
+    background-color:coral;
+    color: white;
+}

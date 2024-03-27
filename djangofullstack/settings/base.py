@@ -32,7 +32,12 @@ DEBUG = env.bool(
     "DJANGO_DEBUG", default=False
 )  # Conserve this! If I am running something locally, then use the environment with docker-compose: for simplicity
 
-ALLOWED_HOSTS = [".loca.lt", "localhost", "127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = [
+    "blue-rice-hide.loca.lt",
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
+]
 
 
 # Application definition

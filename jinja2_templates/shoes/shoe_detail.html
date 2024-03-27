@@ -1,14 +1,20 @@
-<!-- templates/shoes/shoe_detail.html -->
+<!-- jinja2_templates/shoes/shoe_detail.html -->
 {% extends '_base.html' %}
 
 {% block title %}{{ shoe.name }}{% endblock title %}
 
+{% block style %}
+    <link rel="stylesheet" href="{{ static('css/shoe-detail.css') }}">
+{% endblock style%}
+
 {% block content %}
-<div>
-    <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
-    <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name }}</a></h2>
-    <p>Descripción: {{shoe.description}} </p>
-    <p>Price: {{shoe.price}}</p>
-    <a href="{{ shoe.get_purchase_url() }}" class="btn btn-primary">Cómpralos</a>
+<div class="shoe-detail">
+    <div class="shoe-features">
+        <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+        <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name }}</a></h2>
+        <p>{{shoe.description}}</p>
+        <p>${{shoe.price}}</p>
+        <a href="{{ shoe.get_purchase_url() }}" class="btn btn-light" style="color:darkgoldenrod;"><b>Cómpralos</b></a>
+    </div>
 </div>
 {% endblock content %}

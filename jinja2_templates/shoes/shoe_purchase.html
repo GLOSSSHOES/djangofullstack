@@ -3,21 +3,41 @@
 
 {% block title %}Purchase {{ shoe.name }}!{% endblock title %}
 
+{% block style %}
+    <link rel="stylesheet" href="{{ static('css/shoe-detail.css') }}">
+    <link rel="stylesheet" href="{{ static('css/shoe-purchase.css') }}">
+{% endblock style%}
+
 {% block content %}
-<div>
-    <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
-    <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name}}</a></h2>
-    <p>Descripción: {{shoe.description}} </p>
-    <p>Price: {{shoe.price}}</p>
+<div class="shoe-detail">
+    <div class="shoe-features">
+        <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+        <div class="name-description-price">
+            <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name}}</a></h2>
+            <p>{{shoe.description}} </p>
+            <p>Materiales</p>
+        </div>
+        <form class="customer-addresses" action="{{ shoe.get_purchase_conf_with_addresses_url() }}" method="get">
+            {{ csrf_input }}
+            <label for="address">Información de Envío y Pago:</label><br>
+            <input type="text" id="address" name="address" placeholder="Tu dirección" required><br>
+            <input type="text" id="address" name="address" placeholder="Torre, Apartamento~" required><br>
+            <input type="text" id="city" name="city" placeholder="Ciudad (Bogotá)" required><br>
+            <input type="text" id="state" name="state" placeholder="Departamento (Bogotá D.C.)" required><br>
+            <input type="text" id="zip_code" name="zip_code" placeholder="Código postal (opcional)"><br>
+            <br>
+                <label for="email">eMail:</label><br>
+                <input type="email" id="email" name="email" placeholder="___@___.com" required><br>
+            <br>
+            <input name="pk" type="hidden" value="{{shoe.pk}}">
+            <button type="submit" class="btn btn-light" style="color:darkgoldenrod;"><b>Recibir mi Compra</b></button>
+        </form>
+    </div>
 </div>
+
 {% endblock content %}
 
 
 {% block script %}
-    {{ super() }}
     <script src="{{ static('js/purchase.js') }}"></script>
-    <!-- <script type="text/javascript" src="https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200"></script>
-    <noscript>
-    <iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src="https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200"></iframe>
-    </noscript> -->
 {% endblock %}

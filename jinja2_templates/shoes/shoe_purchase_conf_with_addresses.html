@@ -1,0 +1,42 @@
+<!-- templates/shoes/shoe_purchase.html -->
+{% extends '_base.html' %}
+
+{% block title %}Purchase {{ shoe.name }}!{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ static('css/shoe-detail.css') }}">
+    <link rel="stylesheet" href="{{ static('css/shoe-purchase.css') }}">
+{% endblock style%}
+
+{% block content %}
+<div class="shoe-detail">
+    <div class="shoe-features">
+        <img class="shoe-image" src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+        <div class="name-description-price">
+            <h2><a href="{{ shoe.get_absolute_url() }}" class="core-url">{{ shoe.name}}</a></h2>
+            <p>{{shoe.description}}</p>
+            <p>Materiales</p>
+        </div>
+        <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+            <input name="signature" type="hidden" value="{{ signature }}">
+            <input name="referenceCode" type="hidden" value="PAGO003">
+            <input name="merchantId" type="hidden" value="{{ MERCHANT_IDDev }}">
+            <input name="accountId" type="hidden" value="{{ USER_IDDev }}">
+            <input name="description" type="hidden" value="Purchase {{ shoe.name }}-{{ shoe.company }}-${{ shoe.price }}-{{ shoe.pk }}">
+            <input name="amount" type="hidden" value="{{ shoe.price }}"">
+            <input name="tax" type="hidden" value="0">
+            <input name="taxReturnBase" type="hidden" value="0">
+            <input name="currency" type="hidden" value="COP">
+            <input name="test" type="hidden" value="1">
+            <input name="buyerEmail" type="hidden" value="nicalcoca@gmail.com">
+            <input name="responseUrl" type="hidden" value="https://blue-rice-hide.loca.lt/">
+            <input name="confirmationUrl" type="hidden" value="https://blue-rice-hide.loca.lt/">
+            <input name="shippingAddress" type="hidden" value="carrera 67 n 42 - 15">
+            <input name="shippingCity" type="hidden" value="Bogotá">
+            <input name="shippingCountry" type="hidden" value="CO">
+            <input name="Submit" class="btn btn-light" style="color: chartreuse;" type="submit" value="Comprar">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

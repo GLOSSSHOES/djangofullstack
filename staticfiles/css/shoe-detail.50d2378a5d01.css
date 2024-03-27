@@ -1,0 +1,18 @@
+.shoe-detail {
+    margin: 2.5%;
+}
+
+.shoe-features {
+    overflow: auto;
+    text-align: center;
+    background-color: #efefef;
+    padding: 2.5%;
+    width: 100%;
+    border-radius: 1em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+}

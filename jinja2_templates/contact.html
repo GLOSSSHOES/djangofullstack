@@ -7,14 +7,19 @@
 {% endblock style %}
 
 {% block content %}
-    <div class="div-body-contact">
-        <h1>Cómo contactarnos</h1>
-        <p>No dude en comunicarse con nosotros al <b>WhatsApp 32086397111.</b></p>
-        <h3>Escríbenos!</h3>
-        <form method="post">
-            {{ csrf_input }}
-            {{ form.as_p() }}
-            <button type="submit" class="btn btn-light" style="color: coral;">Enviar correo</button>
-        </form>
-    </div>
+<h1>¿Cómo contactarnos?</h1>
+<p>No dude en comunicarse con nosotros al <b>WhatsApp 32086397111.</b></p>
+<div class="contact-container">
+    <h3>Escríbenos!</h3>
+    <form method="post">
+        {{ csrf_input }}
+        {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label><br>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-light btn-sm" style="color: coral;">Enviar correo</button>
+    </form>
+</div>
 {% endblock content %}

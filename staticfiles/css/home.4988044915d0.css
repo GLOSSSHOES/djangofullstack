@@ -1,5 +1,17 @@
+.home {
+    margin: 2.5%;
+}
+
+div.images-container {
+    overflow: auto;
+    text-align: center;
+    background-color: #efefef;
+    border-radius: 2%;
+    padding: 1%;
+}
+
 .url-image-wrapper {
-    width: 48.00%;
+    width: 48.0014%;
     height: auto;
     float: left;
     overflow: auto;
@@ -9,8 +21,8 @@
     margin: 1%;
 }
 
-div.image-wrapper div {
-    font-size:small;
+.text-overlay {
+    font-size:smaller;
     width: 36%;
     height: auto;
     float: left;

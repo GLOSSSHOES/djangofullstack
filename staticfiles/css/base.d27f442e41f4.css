@@ -1,0 +1,17 @@
+/* To know where was originally located the file */
+/* static/css/base.css */
+
+a.core-url {
+    color: burlywood;
+}
+
+body {
+    min-height: 75rem;
+    padding-top: 0rem;
+    margin-left: 0px;
+}
+
+img {
+    height: 300px;
+    width: auto;
+}

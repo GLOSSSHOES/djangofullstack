@@ -2,8 +2,8 @@ from typing import Any
 
 from django.contrib.auth.models import AnonymousUser
 from django.forms.models import BaseModelForm
-from django.views.generic import TemplateView, ListView, FormView, CreateView
-from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.views.generic import TemplateView, ListView, CreateView
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 
 from shoes.models import Shoe

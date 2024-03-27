@@ -9,8 +9,8 @@
     margin: 1%;
 }
 
-div.image-wrapper div {
-    font-size:small;
+.text-overlay {
+    font-size:smaller;
     width: 36%;
     height: auto;
     float: left;
