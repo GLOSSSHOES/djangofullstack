@@ -37,9 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('brand') }}">Marca</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="{{ url('shoe_list') }}">Zapatos</a>
-                    </li>
+                    </li> -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <form method="post" action="{{ url('logout') }}">
@@ -60,7 +60,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="content-container">
         {% block content %}
         {% endblock content %}
     </div>

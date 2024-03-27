@@ -10,14 +10,30 @@
     <p>Descripción: {{shoe.description}} </p>
     <p>Price: {{shoe.price}}</p>
 </div>
+
+<form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+    <input name="signature" type="hidden" value="{{ signature }}">
+    <input name="referenceCode" type="hidden" value="PAGO003">
+    <input name="merchantId" type="hidden" value="{{ MERCHANT_IDDev }}">
+    <input name="accountId" type="hidden" value="{{ USER_IDDev }}">
+    <input name="description" type="hidden" value="Purchase {{ shoe.name }}-{{ shoe.company }}-${{ shoe.price }}-{{ shoe.pk }}">
+    <input name="amount" type="hidden" value="{{ shoe.price }}"">
+    <input name="tax" type="hidden" value="0">
+    <input name="taxReturnBase" type="hidden" value="0">
+    <input name="currency" type="hidden" value="COP">
+    <input name="test" type="hidden" value="1">
+    <input name="buyerEmail" type="hidden" value="nicalcoca@gmail.com">
+    <input name="responseUrl" type="hidden" value="https://blue-rice-hide.loca.lt/">
+    <input name="confirmationUrl" type="hidden" value="https://blue-rice-hide.loca.lt/">
+    <input name="shippingAddress" type="hidden" value="carrera 67 n 42 - 15">
+    <input name="shippingCity" type="hidden" value="Bogotá">
+    <input name="shippingCountry" type="hidden" value="CO">
+    <input name="Submit" type="submit" value="Send">
+</form>
+
 {% endblock content %}
 
 
 {% block script %}
-    {{ super() }}
     <script src="{{ static('js/purchase.js') }}"></script>
-    <!-- <script type="text/javascript" src="https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200"></script>
-    <noscript>
-    <iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src="https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200"></iframe>
-    </noscript> -->
 {% endblock %}

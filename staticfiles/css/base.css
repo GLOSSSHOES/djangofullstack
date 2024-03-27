@@ -7,15 +7,17 @@ a.core-url {
 
 body {
     min-height: 75rem;
-    padding-top: 0rem;
-    margin-left: 0px;
+    padding-top: 0rem;  
 }
 
-h1 {
-    color: cadetblue;
+div.content-container {
+    margin: 2.5%;
 }
 
-img {
-    height: 300px;
-    width: auto;
+div.images-container, div.contact-container {
+    overflow: auto;
+    text-align: left;
+    background-color: #efefef;
+    border-radius: 1rem;
+    padding: 1%;
 }

@@ -2,10 +2,10 @@
 __pycache__/
 db.sqlite3
 docker-compose-prod.yml
-payu.conf.py
 *.sh
 *.sql
 shoes/migrations/
+djangofullstack/settings/PAYU.py
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/django

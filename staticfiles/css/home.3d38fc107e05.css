@@ -1,0 +1,47 @@
+/* .image-carousel {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+} */
+.images-container {
+    display: flex;
+    animation: scroll 11s linear infinite;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper img {
+    width: auto;
+    height: 400px;
+    margin-right: 20px;
+}
+
+.text-overlay {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.name-overlay {
+    top: 0;
+}
+
+.price-overlay {
+    bottom: 0;
+}
+
+/* @keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+} */

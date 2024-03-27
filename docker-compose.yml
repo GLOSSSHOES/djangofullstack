@@ -21,6 +21,7 @@ services:
       - "DJANGO_SECURE_HSTS_PRELOAD=False"
       - "DJANGO_SESSION_COOKIE_SECURE=False"
       - "DJANGO_CSRF_COOKIE_SECURE=False"
+      - "MERCHANTID=1005682"
   db:
     image: postgres:14
     volumes:

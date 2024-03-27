@@ -3,26 +3,25 @@
 {% block title %}Home{% endblock title%}
 
 {% block style %}
-    <link rel="stylesheet" href="{{ static('css/home.css')}}">
+    <link rel="stylesheet" href="{{ static('css/home.css') }}">
 {% endblock style %}
 
 {% block content %}
-    <h1 id="title">Nuestros modelosa</h1>
-    <div class="image-carousel">
-        <div class="images-container">
-            {% for shoe in shoes %}
-            <div class="url-image-wrapper" class="url-image-wrapper">
-                <a id="{{ shoe.pk }}" href="{{ shoe.get_absolute_url() }}">
-                    <div class="image-wrapper">
-                        <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
-                        <div class="text-overlay name-overlay">{{shoe.name}}</div>
-                        <div class="text-overlay price-overlay">${{shoe.price}}</div>
-                    </div>
-                </a>
+<h1>Nuestros modelos</h1>
+<div class="images-container">
+    {% for shoe in shoes %}
+    <div class="url-image-wrapper">
+        <a id="{{ shoe.pk }}" href="{{ shoe.get_absolute_url() }}">
+            <div class="image-wrapper"">
+                <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}" width="50%">
+                <div class="name">{{shoe.name}}</div>
+                <div class="price">${{shoe.price}}</div>
+                <div class="description">{{shoe.description}}</div>
             </div>
-            {% endfor %}
-        </div>
+        </a>
     </div>
+    {% endfor %}
+</div>
 {% endblock content %}
 
 {% if user.is_authenticated %}
