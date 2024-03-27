@@ -12,7 +12,9 @@
 }
 
 img {
-    width: 100%;
+    width: 70%;
+    min-width: 411.539px;
     height: auto;
+    float: left;
     border-radius: 1em;
 }

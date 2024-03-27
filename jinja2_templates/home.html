@@ -13,7 +13,7 @@
     <div class="url-image-wrapper">
         <a id="{{ shoe.pk }}" href="{{ shoe.get_absolute_url() }}">
             <div class="image-wrapper"">
-                <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}" width="50%">
+                <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}" width="50%"><br>
                 <div class="name">{{shoe.name}}</div>
                 <div class="price">${{shoe.price}}</div>
                 <div class="description">{{shoe.description}}</div>

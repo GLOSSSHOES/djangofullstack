@@ -16,6 +16,9 @@ class Shoe(models.Model):
 
     def get_absolute_url(self):
         return reverse("shoe_detail", args=[str(self.pk)])
-    
+
     def get_purchase_url(self):
         return reverse("shoe_purchase", args=[str(self.pk)])
+
+    def get_purchase_conf_with_addresses_url(self):
+        return reverse("shoe_purchase_conf_with_addresses", args=[str(self.pk)])
