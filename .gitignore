@@ -4,9 +4,13 @@ db.sqlite3
 docker-compose-prod.yml
 *.sh
 *.sql
+*.jpg
+*.png
+*.kra
+*.kra.gz
 shoes/migrations/
 djangofullstack/settings/PAYU.py
-
+djangofullstack/settings/prod_w.py
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
